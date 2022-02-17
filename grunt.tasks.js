@@ -28,6 +28,7 @@ module.exports = function (grunt) {
         'electron:linux',
         'electron-patch:linux',
         'chmod:linux-desktop-x64',
+        'copy:electron-remote-lib-linux-x64',
         'copy:native-modules-linux-x64',
         'copy:native-messaging-host-linux-x64'
     ]);
@@ -40,8 +41,10 @@ module.exports = function (grunt) {
         'build-darwin-installer',
         'copy:desktop-darwin-installer-helper-x64',
         'copy:desktop-darwin-installer-helper-arm64',
+        'copy:electron-remote-lib-darwin-x64',
         'copy:native-modules-darwin-x64',
         'copy:native-messaging-host-darwin-x64',
+        'copy:electron-remote-lib-darwin-arm64',
         'copy:native-modules-darwin-arm64',
         'copy:native-messaging-host-darwin-arm64',
         sign ? 'osx-sign:desktop-x64' : 'noop',
@@ -63,6 +66,9 @@ module.exports = function (grunt) {
         'electron-patch:win32-x64',
         'electron-patch:win32-ia32',
         'electron-patch:win32-arm64',
+        'copy:electron-remote-lib-win32-x64',
+        'copy:electron-remote-lib-win32-ia32',
+        'copy:electron-remote-lib-win32-arm64',
         'copy:native-modules-win32-x64',
         'copy:native-modules-win32-ia32',
         'copy:native-modules-win32-arm64',

@@ -178,6 +178,36 @@ module.exports = function (grunt) {
                 dest: `dist/desktop/KeeWeb-${pkg.version}.win.arm64.exe`,
                 nonull: true
             },
+            'electron-remote-lib-win32-x64': {
+                src: 'node_modules/@electron/remote/**',
+                dest: 'tmp/desktop/KeeWeb-win32-x64/resources/',
+                nonull: true
+            },
+            'electron-remote-lib-win32-ia32': {
+                src: 'node_modules/@electron/remote/**',
+                dest: 'tmp/desktop/KeeWeb-win32-ia32/resources/',
+                nonull: true
+            },
+            'electron-remote-lib-win32-arm64': {
+                src: 'node_modules/@electron/remote/**',
+                dest: 'tmp/desktop/KeeWeb-win32-arm64/resources/',
+                nonull: true
+            },
+            'electron-remote-lib-darwin-x64': {
+                src: 'node_modules/@electron/remote/**',
+                dest: 'tmp/desktop/KeeWeb-darwin-x64/KeeWeb.app/Contents/Resources/',
+                nonull: true
+            },
+            'electron-remote-lib-darwin-arm64': {
+                src: 'node_modules/@electron/remote/**',
+                dest: 'tmp/desktop/KeeWeb-darwin-arm64/KeeWeb.app/Contents/Resources/',
+                nonull: true
+            },
+            'electron-remote-lib-linux-x64': {
+                src: 'node_modules/@electron/remote/**',
+                dest: 'tmp/desktop/keeweb-linux-x64/resources/',
+                nonull: true
+            },
             'native-modules-darwin-x64': {
                 src: 'node_modules/@keeweb/keeweb-native-modules/*-darwin-x64.node',
                 dest: 'tmp/desktop/KeeWeb-darwin-x64/KeeWeb.app/Contents/Resources/',

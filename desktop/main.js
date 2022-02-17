@@ -10,6 +10,9 @@ const path = require('path');
 const fs = require('fs');
 const url = require('url');
 
+const remoteMain = require('@electron/remote/main');
+remoteMain.initialize();
+
 const { locale, setLocale, getLocaleValues } = require('./scripts/locale');
 const { Logger } = require('./scripts/logger');
 const { isDev } = require('./scripts/util/app-info');
@@ -308,6 +311,8 @@ function createMainWindow() {
     }
     mainWindow = new electron.BrowserWindow(windowOptions);
     logProgress('creating main window');
+
+    remoteMain.enable(mainWindow.webContents);
 
     mainWindow.loadURL(htmlPath);
     mainWindow.once('ready-to-show', () => {
