@@ -106,7 +106,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "optionalDependencies": {
-    "grunt-appdmg": "github:keeweb/grunt-appdmg#874ad83",
+    "grunt-appdmg": "github:qeeqez/grunt-appdmg#d866592dc10b04328eba30acad22f9ca0832b5fa",
     "keytar": "^7.7.0"
   },
   "scripts": {
