@@ -1,6 +1,5 @@
 module.exports = function (grunt) {
-    grunt.registerMultiTask('nsis', 'Launches NSIS installer', function () {
-        const done = this.async();
+    grunt.registerMultiTask('nsis', 'Launches NSIS installer', async function () {
         const opt = this.options();
         const args = [];
         const win = process.platform === 'win32';
@@ -34,7 +33,6 @@ module.exports = function (grunt) {
                 if (code) {
                     return grunt.warn('NSIS exit code ' + code);
                 }
-                done();
             }
         );
     });

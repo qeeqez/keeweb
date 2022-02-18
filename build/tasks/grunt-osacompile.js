@@ -5,7 +5,6 @@ module.exports = function (grunt) {
         'osacompile',
         'Builds an executable .app package with osacompile',
         async function () {
-            const done = this.async();
             const opt = this.options();
 
             for (const file of this.files) {
@@ -33,8 +32,6 @@ module.exports = function (grunt) {
 
                 grunt.log.writeln(`Built ${dest}`);
             }
-
-            done();
         }
     );
 };

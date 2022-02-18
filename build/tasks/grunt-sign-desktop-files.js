@@ -1,6 +1,5 @@
 module.exports = function (grunt) {
     grunt.registerMultiTask('sign-desktop-files', 'Signs desktop files', async function () {
-        const done = this.async();
         const fs = require('fs');
         const path = require('path');
         const sign = require('../util/sign');
@@ -19,7 +18,6 @@ module.exports = function (grunt) {
         grunt.file.write(path.join(appPath, 'signatures.json'), JSON.stringify(signaturesWithSelf));
 
         grunt.log.writeln(`\nSigned ${signedFiles.length} files: ${signedFiles.join(', ')}`);
-        done();
 
         async function walk(dir) {
             const list = fs.readdirSync(dir);

@@ -4,7 +4,6 @@ module.exports = function (grunt) {
         const crypto = require('crypto');
         const sign = require('../util/sign');
 
-        const done = this.async();
         const opt = this.options();
 
         const results = [];
@@ -36,7 +35,5 @@ module.exports = function (grunt) {
                 results.map((line) => `${line.signature} *${line.basename}`).join('\n')
             );
         }
-
-        done();
     });
 };

@@ -9,14 +9,11 @@ module.exports = function (grunt) {
         'sign-exe',
         'Signs exe file with authenticode certificate',
         async function () {
-            const done = this.async();
             const opt = this.options();
 
             for (const [file, name] of Object.entries(opt.files)) {
                 await signFile(file, name, opt);
             }
-
-            done();
         }
     );
 

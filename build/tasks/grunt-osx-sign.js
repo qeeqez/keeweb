@@ -5,7 +5,6 @@ module.exports = function (grunt) {
         'osx-sign',
         'Signs a macOS electron app using electron-osx-sign',
         async function () {
-            const done = this.async();
             const opt = this.options();
 
             Promise.all(
@@ -27,7 +26,7 @@ module.exports = function (grunt) {
                         );
                     });
                 })
-            ).then(done);
+            );
         }
     );
 };

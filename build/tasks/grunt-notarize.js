@@ -5,7 +5,6 @@ module.exports = function (grunt) {
         'notarize',
         'Notarizes a macOS electron app using electron-notarize',
         async function () {
-            const done = this.async();
             const opt = this.options();
 
             Promise.all(
@@ -18,7 +17,7 @@ module.exports = function (grunt) {
                             grunt.warn('electron-notarize returned an error: \n' + err);
                         })
                 )
-            ).then(done);
+            );
         }
     );
 };

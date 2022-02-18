@@ -1,7 +1,5 @@
 module.exports = function (grunt) {
-    grunt.registerMultiTask('electron-builder', 'Runs electron-builder', function () {
-        const done = this.async();
-
+    grunt.registerMultiTask('electron-builder', 'Runs electron-builder', async function () {
         const opt = this.options();
 
         const builder = require('electron-builder');
@@ -12,7 +10,6 @@ module.exports = function (grunt) {
                 ...opt,
                 targets: Platform[opt.targets.toUpperCase()].createTarget()
             })
-            .then(done)
             .catch((error) => {
                 return grunt.warn('electron-builder returned an error: \n' + error);
             });

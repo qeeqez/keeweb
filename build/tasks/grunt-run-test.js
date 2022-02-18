@@ -1,6 +1,5 @@
 module.exports = function (grunt) {
-    grunt.registerMultiTask('run-test', 'Runs KeeWeb browser-tests', function () {
-        const done = this.async();
+    grunt.registerMultiTask('run-test', 'Runs KeeWeb browser-tests', async function () {
         const opt = this.options();
         const file = this.files[0].src[0];
 
@@ -38,7 +37,6 @@ module.exports = function (grunt) {
                         grunt.warn(`Failed ${failures} test${failures > 1 ? 's' : ''}.`);
                     } else {
                         grunt.log.writeln('All tests passed');
-                        done();
                     }
                 } else {
                     setTimeout(check, 100);
